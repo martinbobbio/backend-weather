@@ -1,5 +1,5 @@
 var express = require('express');
-const request = require('supertest');
+//const request = require('supertest');
 var app = express();
 
 app.get("/", (req, res, next) => {
@@ -9,12 +9,12 @@ app.get("/", (req, res, next) => {
 });
 
 //TESTS
-request(app)
-  .get('/')
-  .expect('Content-Type', /json/)
-  .expect(200)
-  .end(function(err, res) {
-    if (err) throw err;
-  });
+// request(app)
+//   .get('/')
+//   .expect('Content-Type', /json/)
+//   .expect(200)
+//   .end(function(err, res) {
+//     if (err) throw err;
+//   });
 
 module.exports = app;
