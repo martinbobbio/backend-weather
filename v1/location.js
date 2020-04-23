@@ -1,6 +1,6 @@
 var express = require("express");
 var axios = require('axios');
-const request = require('supertest');
+//const request = require('supertest');
 var app = express();
 
 
@@ -13,8 +13,8 @@ app.get("/location", (req, res) => {
   })
 });
 //TEST
-request(app).get('/location').expect('Content-Type', /json/).expect(200).end(function(err, res) {
-  if (err) throw err;
-});
+// request(app).get('/location').expect('Content-Type', /json/).expect(200).end(function(err, res) {
+//   if (err) throw err;
+// });
 
 module.exports = app;
