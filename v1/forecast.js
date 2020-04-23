@@ -1,6 +1,6 @@
 var express = require("express");
 var axios = require('axios');
-const request = require('supertest');
+// const request = require('supertest');
 var app = express();
 
 app.get("/forecast", (req, res) => {
@@ -18,9 +18,9 @@ app.get("/forecast", (req, res) => {
   })
 });
 //TEST
-request(app).get('/forecast').expect('Content-Type', /json/).expect(200).end(function(err, res) {
-  if (err) throw err;
-});
+// request(app).get('/forecast').expect('Content-Type', /json/).expect(200).end(function(err, res) {
+//   if (err) throw err;
+// });
 
 app.get("/forecast/:city", (req, res) => {
   var city = req.params.city;
@@ -32,8 +32,8 @@ app.get("/forecast/:city", (req, res) => {
     })
 });
 //TEST
-request(app).get('/forecast/Madrid').expect('Content-Type', /json/).expect(200).end(function(err, res) {
-  if (err) throw err;
-});
+// request(app).get('/forecast/Madrid').expect('Content-Type', /json/).expect(200).end(function(err, res) {
+//   if (err) throw err;
+// });
 
 module.exports = app;
